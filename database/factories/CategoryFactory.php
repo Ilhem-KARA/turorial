@@ -4,11 +4,12 @@
 
 use App\Model\Category;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(Category::class, function (Faker $faker) {
-   $word = $faker->word;
+    $word1 = $faker->word;
     return [
-        'name' => $word,
-        'name' => str_slug($word),
+        'name' => $word1,
+        'slug' => Str::slug($word1),
     ];
 });
