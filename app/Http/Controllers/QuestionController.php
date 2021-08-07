@@ -15,6 +15,16 @@ class QuestionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    /**
+     * Create a new AuthController instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('JWT', ['except' => ['index', 'show']]);
+    }
+
     public function index()
     {
         //return Question::latest()->get();
